@@ -15,6 +15,7 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 RUN ln -sf /dev/stdout /var/log/apache2/access.log && \
     ln -sf /dev/stderr /var/log/apache2/error.log
 RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
+RUN sed -e 's/max_execution_time = 30/max_execution_time = 10000/' -i /etc/php/7.0/apache2/php.ini
 
 VOLUME [ "/var/www/html" ]
 WORKDIR /var/www/html
