@@ -6,7 +6,7 @@ services:
     ports:
       - '80:8080'
     volumes:
-      - /Users/joesprankle/Desktop/0111/truniagen:/var/www/html
+      - /Users/joesprankle/Desktop/truniagen:/var/www/html
       - ./apache.conf:/etc/apache2/sites-available/000-default.conf
     depends_on:
       - db

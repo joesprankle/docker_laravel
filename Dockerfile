@@ -44,7 +44,7 @@ RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 VOLUME [ "/var/www/html" ]
 WORKDIR /var/www/html
 
-EXPOSE 80
+EXPOSE 8080
 
 ENTRYPOINT [ "/usr/sbin/apache2" ]
 CMD ["-D", "FOREGROUND"]
